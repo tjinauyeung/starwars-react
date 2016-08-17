@@ -1,5 +1,19 @@
+.category {
+	
+}
+
+.category {
+	transition: all 200ms ease-in-out;
+}
+
 .gridView {
 	display: flex;
+
+	div {
+		width: 400px;
+		height: 400px;
+		background: #eee;
+	}
 
 	h2 {
 		color: blue;
@@ -8,6 +22,7 @@
 
 .tableView {
 	display: table;
+	padding: 50px;
 	border: 1px solid #000;
 	border-collapse: collapse;
 

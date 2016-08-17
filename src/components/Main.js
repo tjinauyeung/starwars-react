@@ -7,8 +7,7 @@ class Main extends Component {
     super();
 
     this.state = {
-      categories: {},
-      gridView: true
+      categories: {}
     };
   }
 
@@ -31,21 +30,15 @@ class Main extends Component {
     this.reload();
   }
 
-  changeView(){
-  	this.setState({
-  		gridView: !this.state.gridView
-  	})
-  }
-
   render() {
     return (
       <div>
       	<h1>Select a category</h1>
-				
-      	<button onClick={this.changeView.bind(this)}>Grid or Table</button>
+      	<div className="container">
       	{ Object.keys(this.state.categories).map(key =>
 				    <Category key={key} name={key} value={this.state.categories[key]} gridView={this.state.gridView} />
 				)}
+				</div>
       </div>
     );
   }

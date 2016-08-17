@@ -10,7 +10,7 @@ ReactDOM.render(
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Main} />
-			<Route path="categories/:categoryId" component={CategoryView} />
+			<Route path="category/:categoryId" component={CategoryView} />
 		</Route>
 	</Router>,
   document.getElementById('root')
