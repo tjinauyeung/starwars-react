@@ -35,7 +35,6 @@ class Main extends Component {
   	this.setState({
   		gridView: !this.state.gridView
   	})
-  	console.log(this.state.gridView);
   }
 
   render() {

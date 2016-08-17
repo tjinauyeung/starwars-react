@@ -1,7 +1,1 @@
-@mixin helloworld(){
-	background: blue;
-};
-
-body {
-	@include helloworld();
-}
+@import 'components/Category';

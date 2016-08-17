@@ -1,0 +1,18 @@
+.gridView {
+	display: flex;
+
+	h2 {
+		color: blue;
+	}
+}
+
+.tableView {
+	display: table;
+	border: 1px solid #000;
+	border-collapse: collapse;
+
+	h2 {
+		display: table-cell;
+		border: 1px solid #000;
+	}
+}
