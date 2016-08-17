@@ -1,0 +1,7 @@
+@mixin helloworld(){
+	background: blue;
+};
+
+body {
+	@include helloworld();
+}
