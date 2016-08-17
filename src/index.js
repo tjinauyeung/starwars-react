@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Main from './components/Main';
 import Category from './components/Category';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import CategoryView from './components/CategoryView';
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 
 ReactDOM.render(
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Main} />
-			<Route path="categories/" component={Category} />
+			<Route path="categories/:categoryId" component={CategoryView} />
 		</Route>
 	</Router>,
   document.getElementById('root')

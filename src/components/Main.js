@@ -41,6 +41,7 @@ class Main extends Component {
     return (
       <div>
       	<h1>Select a category</h1>
+				
       	<button onClick={this.changeView.bind(this)}>Grid or Table</button>
       	{ Object.keys(this.state.categories).map(key =>
 				    <Category key={key} name={key} value={this.state.categories[key]} gridView={this.state.gridView} />
