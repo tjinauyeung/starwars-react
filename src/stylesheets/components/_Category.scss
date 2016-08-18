@@ -1,6 +1,7 @@
 .category--grid {
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 40px;
 
 	.category__item {
 		width: 25%;
@@ -26,20 +27,50 @@
 			opacity: 1; 
 		}
 	}
+	
+	.category__image {
+		display: block;
+		width: 100%;
+		height: 300px;
+	}
 
-	h2 {
-		color: blue;
+	.category__info {
+		color: $white;
+		position: absolute;
+		bottom: 30px;
+		left: 30px;
+		font-size: 30px;
 	}
 }
 
 .category--table {
-	display: table;
 	max-width: 800px;
 	width: 100%;
 	margin: 50px auto;
 	color: $white;
 	border: 1px solid $white;
 	border-collapse: collapse;
+
+	.category__item {
+		display: flex;
+	}
+
+	.category__image {
+		background-size: 80px;
+		min-width: 150px;
+		height: 150px;
+		border: 1px solid $white;
+	}
+
+	.category__info {
+		height: 150px;
+		flex: 1;
+		padding: 60px;
+		border: 1px solid $white;
+		text-transform: uppercase;
+		font-size: 30px;
+		letter-spacing: 1px;
+	}
 
 	h2 {
 		display: table-cell;
@@ -48,9 +79,6 @@
 }
 
 .category__image {
-	display: block;
-	width: 100%;
-	height: 300px;
 	background: url('http://img01.deviantart.net/fbd3/i/2014/325/1/0/stormtrooper_helmet___star_wars_vector_by_firedragonmatty-d8752th.png') center center no-repeat;
 	background-size: 120px;
 	cursor: pointer;

@@ -4,7 +4,6 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <p>Made in Amsterdam</p>
 			</footer>
     );
   }

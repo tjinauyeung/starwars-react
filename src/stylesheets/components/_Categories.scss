@@ -1,6 +1,6 @@
 .categories__container {
 	display: flex;
-	width: 100vw;
+	width: 100%;
 	min-height: calc(100vh - #{$navbar-height} - #{$second-navbar-height});
 
 	a {
@@ -19,12 +19,34 @@
 .categories__heading {
 	@include centerContent;
 
+	justify-content: flex-start;
 	height: $second-navbar-height;
-	background: $yellow;
-	color: $white;
-	font-size: 18px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+	position: relative;
+
+	h1 {
+		background: $black;
+		z-index: 9;
+		padding: 20px;
+		color: $white;
+		font-size: 18px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	span {
+		display: inline-block;
+		border-bottom: 1px solid $yellow;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		height: 1px;
+		width: 100%;
+		position: absolute;
+		top: $second-navbar-height / 2 - 3px;
+		background: $white;
+	}
 }
 
 .categories__panel {

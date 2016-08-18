@@ -18,7 +18,7 @@ class Main extends Component {
     	if (typeof categories !== 'object') {
     		return;
     	}
-      
+
     	component.setState({
   			categories: categories
   		}); 
@@ -32,7 +32,7 @@ class Main extends Component {
   render() {
     return (
       <div className="container">
-      	<h1 className="categories__heading">Select a category</h1>
+      	<div className="categories__heading"><h1>Select a category</h1></div>
       	<section className="categories__container">
       	  { Object.keys(this.state.categories).map((category, index) =>
 				    <CategoriesPanel key={index} category={category} />

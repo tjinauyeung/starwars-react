@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Switch from './Switch';
+import Loader from './Loader';
 import jQuery from 'jquery';
 
 class CategoryView extends Component {
@@ -8,7 +9,8 @@ class CategoryView extends Component {
 
     this.state = {
     	items: [],
-      gridView: true
+      gridView: true,
+      isLoading: true
     }
   }
 
@@ -22,7 +24,8 @@ class CategoryView extends Component {
     	}
 
     	component.setState({
-    		items: data.results
+    		items: data.results,
+        isLoading: false
     	});
     });
   }
@@ -39,7 +42,12 @@ class CategoryView extends Component {
 
   render() {
     return (
-    	<section>        
+    	<section>
+
+        <Loader loading={this.state.isLoading} />
+
+        <div className="categories__heading"><h1>Selected Category: <span>{this.props.params.categoryId}</span></h1></div>
+        
         <Switch 
           view={this.state.gridView} 
           handleChange={this.changeView.bind(this)}
@@ -52,9 +60,6 @@ class CategoryView extends Component {
 				    	<div className="category__image"></div>
 				    	<div className="category__info">
                 <h2>{item.name}</h2>
-                <p>{item.info}</p>
-                <p>{item.name}</p>
-                <p>{item.name}</p>
               </div>
 				   	</div>
 					)}

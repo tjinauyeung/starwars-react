@@ -1,4 +1,7 @@
 body {
 	background: $black;
 	font-family: 'Din Pro';
+	font-weight: 200;
+	overflow-x: hidden;
+	padding: $container-padding $container-padding 0;
 }
