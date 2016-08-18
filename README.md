@@ -1,4 +1,5 @@
-### Star Wars React front end ###
+### Star Wars React Front End ###
 
-About this project
-It uses the react app creation tool to build a react app. 
+#About this project 
+
+This was a React exercise using swapi.com API to get data and build some views for it

@@ -10,7 +10,8 @@ class CategoryView extends Component {
     this.state = {
     	items: [],
       gridView: true,
-      isLoading: true
+      isLoading: true,
+      detailsView: false
     }
   }
 
@@ -40,6 +41,15 @@ class CategoryView extends Component {
   	})
   }
 
+  openModal(){
+    return (
+      <div className="modal" style={{width: '500px', height: '500px', background: 'yellow', position: 'fixed', left: 0, top: 0 }}>
+        {console.log('got it')}
+        Where's my modal??
+      </div>
+    )
+  }
+
   render() {
     return (
     	<section>
@@ -56,7 +66,7 @@ class CategoryView extends Component {
         <div className={ this.state.gridView ? 'category category--grid' : 'category category--table' }>
 	    		
           { this.state.items.map((item, index) =>
-				    <div key={index} className="category__item">
+				    <div key={index} className="category__item" onClick={this.openModal.bind(this)}>
 				    	<div className="category__image"></div>
 				    	<div className="category__info">
                 <h2>{item.name}</h2>
