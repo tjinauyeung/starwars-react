@@ -10,6 +10,7 @@ class CategoryView extends Component {
 
     this.state = {
     	items: [],
+      currentItem: {},
       gridView: true,
       isLoading: true,
       modal: false
@@ -42,9 +43,10 @@ class CategoryView extends Component {
   	})
   }
 
-  toggleModal(){
+  toggleModal(item){
     this.setState({
-      modal: !this.state.modal
+      modal: !this.state.modal,
+      currentItem: item
     })
   }
 
@@ -53,7 +55,8 @@ class CategoryView extends Component {
     	<section>
 
         <Loader loading={this.state.isLoading} />
-
+        
+        <Modal toggle={this.toggleModal.bind(this, {})} item={this.state.currentItem} active={this.state.modal}/>
 
         <div className="categories__heading"><h1>Selected Category: <span>{this.props.params.categoryId}</span></h1></div>
         
@@ -65,15 +68,12 @@ class CategoryView extends Component {
         <div className={ this.state.gridView ? 'category category--grid' : 'category category--table' }>
 	    		
           { this.state.items.map((item, index) =>
-				    <div key={index} className="category__item" onClick={this.toggleModal.bind(this)}>
+				    <div key={index} className="category__item" onClick={this.toggleModal.bind(this, item)}>
 				    	<div className="category__image"></div>
 				    	<div className="category__info">
                 <h2>{item.name}</h2>
               </div>
-              <Modal active={this.state.modal} item={item} closeModal={this.toggleModal.bind(this)}/>
 				   	</div>
-
-            
 					)}
 
 				</div>

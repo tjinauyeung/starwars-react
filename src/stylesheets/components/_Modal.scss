@@ -1,10 +1,20 @@
-.modal {
+.modal.is-active {
 	position: fixed;
 	left: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	height: 400px;
-	width: 400px;
+	height: 600px;
+	max-width: 600px;
+	margin: auto;
 	background: yellow;
+	z-index: 999;
+	transform: scale(1);
+	transition: transform 300ms ease-in-out;
+	box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
+}
+
+.modal.is-hidden {
+	transform: scale(0);
+	transition: transform 300ms ease-in-out;
 }

@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Modal extends Component {
   render() {
     return (
-      <div>{console.log(this.props.item.name)}</div>
+      <div className={ this.props.active ? "modal is-active" : "modal is-hidden" }>
+      	{ for (var i in this.props.item ) => i }
+      </div>
     );
   }
 }
