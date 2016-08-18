@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Switch from './Switch';
 import jQuery from 'jquery';
 
 class CategoryView extends Component {
@@ -19,6 +20,7 @@ class CategoryView extends Component {
     	if (typeof data !== 'object') {
     		return;
     	}
+
     	component.setState({
     		items: data.results
     	});
@@ -37,22 +39,28 @@ class CategoryView extends Component {
 
   render() {
     return (
-    	<div>
-    		<h1>the category is: {this.props.params.categoryId}</h1>
-      	<button 
-      		className={ this.state.gridView ? "btn on" : "btn off" } 
-      		onClick={ this.changeView.bind(this) }>
-      		Grid or Table
-      	</button>
-      	<div className={ this.state.gridView ? 'category gridView' : 'category tableView' }>
-	    		{ this.state.items.map((item, index) =>
-					    <div key={index}>
-					    	<div>{item.name}</div>
-					    	<div>{item.name}</div>
-					   	</div>
+    	<section>        
+        <Switch 
+          view={this.state.gridView} 
+          handleChange={this.changeView.bind(this)}
+        />
+      	
+        <div className={ this.state.gridView ? 'category category--grid' : 'category category--table' }>
+	    		
+          { this.state.items.map((item, index) =>
+				    <div key={index} className="category__item">
+				    	<div className="category__image"></div>
+				    	<div className="category__info">
+                <h2>{item.name}</h2>
+                <p>{item.info}</p>
+                <p>{item.name}</p>
+                <p>{item.name}</p>
+              </div>
+				   	</div>
 					)}
+
 				</div>
-    	</div>
+    	</section>
     );
   }
 }

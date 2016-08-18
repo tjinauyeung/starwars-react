@@ -3,7 +3,13 @@ import React, { Component } from 'react';
 class Header extends Component {
   render() {
     return (
-      <h1>I'm a header!</h1>
+      <header>
+      	<nav className="navbar">
+      		<li className="navbar__link">Home</li>
+      		<li><img  className="navbar__logo" src={require("../assets/images/logo-starwars.png")} role="presentation" /></li>
+      		<li className="navbar__link">About</li>
+      	</nav>
+			</header>
     );
   }
 }

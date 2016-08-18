@@ -1,2 +1,16 @@
+// Reset
+@import 'reset/reset';
+@import 'reset/cssreset';
+
+// Variables
+@import 'global/mixins';
+@import 'global/fonts';
+@import 'global/vars';
+@import 'global/layout';
+
+// Components
+@import 'components/Categories';
+@import 'components/Switch';
 @import 'components/Category';
-@import 'components/buttons';
+@import 'components/Header';
+@import 'components/Footer';

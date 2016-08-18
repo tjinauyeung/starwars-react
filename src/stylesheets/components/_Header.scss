@@ -1,0 +1,23 @@
+header {
+	background: $black;
+
+	.navbar {
+		@include centerContent; 
+
+		list-style-type: none;
+		padding: 0;
+		width: 100vw;
+		height: $navbar-height;
+	}
+
+	.navbar__link {
+		color: $nav-color;
+		min-width: 100px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.navbar__logo {
+		max-width: 120px;
+	}
+}

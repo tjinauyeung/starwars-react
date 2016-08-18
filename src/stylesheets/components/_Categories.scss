@@ -1,0 +1,38 @@
+.categories__container {
+	display: flex;
+	width: 100vw;
+	min-height: calc(100vh - #{$navbar-height} - #{$second-navbar-height});
+
+	a {
+		position: relative;
+		flex: 1;
+		padding: 50px;
+		transition: all 100ms ease-in-out;
+		
+		&:hover {
+			transition: all 100ms ease-in-out;
+			background: $yellow;
+		}
+	}
+}
+
+.categories__heading {
+	@include centerContent;
+
+	height: $second-navbar-height;
+	background: $yellow;
+	color: $white;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.categories__panel {
+	color: $white;
+
+	h2 {
+		font-size: 80px;
+		font-weight: 200;
+		writing-mode: tb-rl;
+	}
+}

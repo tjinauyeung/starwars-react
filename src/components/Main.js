@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import jQuery from 'jquery';
-import Category from './Category';
+import CategoriesPanel from './CategoriesPanel';
 
 class Main extends Component {
 	constructor(){
@@ -18,11 +18,10 @@ class Main extends Component {
     	if (typeof categories !== 'object') {
     		return;
     	}
-
+      
     	component.setState({
   			categories: categories
   		}); 
-
     });
   }
 
@@ -32,13 +31,13 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
-      	<h1>Select a category</h1>
-      	<div className="container">
-      	{ Object.keys(this.state.categories).map(key =>
-				    <Category key={key} name={key} value={this.state.categories[key]} gridView={this.state.gridView} />
-				)}
-				</div>
+      <div className="container">
+      	<h1 className="categories__heading">Select a category</h1>
+      	<section className="categories__container">
+      	  { Object.keys(this.state.categories).map((category, index) =>
+				    <CategoriesPanel key={index} category={category} />
+				  )}
+				</section>
       </div>
     );
   }
