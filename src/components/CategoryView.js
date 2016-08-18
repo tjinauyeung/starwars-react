@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Switch from './Switch';
 import Loader from './Loader';
+import Modal from './Modal';
 import jQuery from 'jquery';
 
 class CategoryView extends Component {
@@ -11,7 +12,7 @@ class CategoryView extends Component {
     	items: [],
       gridView: true,
       isLoading: true,
-      detailsView: false
+      modal: false
     }
   }
 
@@ -41,13 +42,10 @@ class CategoryView extends Component {
   	})
   }
 
-  openModal(){
-    return (
-      <div className="modal" style={{width: '500px', height: '500px', background: 'yellow', position: 'fixed', left: 0, top: 0 }}>
-        {console.log('got it')}
-        Where's my modal??
-      </div>
-    )
+  toggleModal(){
+    this.setState({
+      modal: !this.state.modal
+    })
   }
 
   render() {
@@ -55,6 +53,7 @@ class CategoryView extends Component {
     	<section>
 
         <Loader loading={this.state.isLoading} />
+
 
         <div className="categories__heading"><h1>Selected Category: <span>{this.props.params.categoryId}</span></h1></div>
         
@@ -66,12 +65,15 @@ class CategoryView extends Component {
         <div className={ this.state.gridView ? 'category category--grid' : 'category category--table' }>
 	    		
           { this.state.items.map((item, index) =>
-				    <div key={index} className="category__item" onClick={this.openModal.bind(this)}>
+				    <div key={index} className="category__item" onClick={this.toggleModal.bind(this)}>
 				    	<div className="category__image"></div>
 				    	<div className="category__info">
                 <h2>{item.name}</h2>
               </div>
+              <Modal active={this.state.modal} item={item} closeModal={this.toggleModal.bind(this)}/>
 				   	</div>
+
+            
 					)}
 
 				</div>
