@@ -7,6 +7,7 @@
 		width: 25%;
 		height: 300px;
 		position: relative;
+		cursor: pointer;
 		transition: all 150ms ease-in-out;
 
 		&:before {
@@ -53,6 +54,7 @@
 
 	.category__item {
 		display: flex;
+		cursor: pointer;
 	}
 
 	.category__image {
@@ -81,5 +83,4 @@
 .category__image {
 	background: url('http://img01.deviantart.net/fbd3/i/2014/325/1/0/stormtrooper_helmet___star_wars_vector_by_firedragonmatty-d8752th.png') center center no-repeat;
 	background-size: 120px;
-	cursor: pointer;
 }
