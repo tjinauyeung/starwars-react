@@ -1,20 +1,47 @@
-.modal.is-active {
+.modal__container {
+	@include centerContent;
+
 	position: fixed;
 	left: 0;
 	top: 0;
-	right: 0;
-	bottom: 0;
-	height: 600px;
-	max-width: 600px;
-	margin: auto;
-	background: yellow;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.8);
 	z-index: 999;
-	transform: scale(1);
-	transition: transform 300ms ease-in-out;
-	box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 200ms ease-in-out;
+
+	&.is-active {
+		opacity: 1;
+		pointer-events: auto;
+		transition: opacity 200ms ease-in-out;
+	}
+	
+	&.is-hidden {
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 200ms ease-in-out;
+	}
 }
 
-.modal.is-hidden {
-	transform: scale(0);
-	transition: transform 300ms ease-in-out;
+.modal {
+	padding: 10px;
+	height: 600px;
+	max-width: 600px;
+	width: 100%;
+	background: yellow;
+	z-index: 999;		
+	
+	h2 {
+		font-size: 28px;
+		font-weight: 300;
+		color: $black;
+		line-height: 150%;
+		margin-top: 10px;
+		padding: 10px;
+		border: 1px solid $black;
+	}
+
+	h2:first-child { margin-top: 0 }
 }
